@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-learn</title>
+    <link rel="stylesheet" href="Elearn.css">
+</head>
+<body>
+    <div class="container">
+    <div class="signup-box">
+        <div class="col-1">
+            <img src="image.png">
+        </div>
+        <div class="col-2">
+            <h2>Lets Start Today</h2>
+            <Span>Already have an account?<a href="#">Login</a></span>
+            <a href="" class="google-link">
+            <img src="google.png">Continue with google
+
+            </a>
+          <h4>Or</h4>
+
+          <form id="myForm">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email" name="email" class="input-field" required>
+
+            <label>Set Password</label>
+            <input type="password" placeholder="Enter password" name="password" class="input-field" required>
+
+            <div class="row">
+                <input type="checkbox" checked>
+                <span>I Agree to the <a href="#">terms and conditions</a></span>
+            </div>
+            <button type="submit">Register Now</button>
+          </form>
+        </div>
+    </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">      (function () {
+        emailjs.init("AqcwFAWOQMHZsaGmS");
+      })();
+    </script>
+    <script>
+
+      
+        // listen to the form submission
+        document
+          .getElementById("myForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+  
+            const serviceID = "service_us46k6q";
+            const templateID = "template_el1r8z8";
+  
+            // send the email here
+            emailjs.sendForm(serviceID, templateID, this).then(
+              (response) => {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("SUCCESS!");
+              },
+              (error) => {
+                console.log("FAILED...", error);
+                alert("FAILED...", error);
+              }
+            );
+          });
+        </script>
+</body>
+</html>
