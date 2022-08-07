@@ -1,2 +1,2 @@
 # TEAMwebsite
-a website where different persons of all level come together and share ideas
+a website where different business entrepreneurs of all level come together and share ideas
